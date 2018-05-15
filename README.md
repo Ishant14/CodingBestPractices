@@ -104,6 +104,105 @@ console.log( lightPlugged ? 'Light is on':'Light is off');
 // => Light is on
 ```
 
+## String interpolation
+
+String interpolation refers to the process of replacing programmer-defined keywords in a string with corresponding variables. It saves time, lines of code and readability.
+
+**Old Way**
+
+```javascript
+let x = 5;
+let expected = 8;
+
+console.log('Content of variable x is: ' + x + ', and expected is ' + expected);
+
+// => Content of variable x is: 5, and expected is 8
+```
+
+**String Interpolation way**
+
+```javascript
+let x = 5;
+let expected = 8;
+
+console.log(`Content of variable x is: ${x} and expected is ${expected}`);
+
+// => Content of variable x is: 5, and expected is 8
+
+```
+
+
+## Functional programming basics - Map & Filter
+
+Don’t worry, it will be dead-easy even if you’ve always been scared about functional programming.
+
+Once again, it’s a language feature that a lot of languages support.
+
+**Examples**
+
+>Your first task is to double all the elements of an array.
+
+**Old Way**
+
+```javascript
+let x = [1,2,3,4,5];
+let y = [];
+
+for(let i = 0; i < x.length; i ++)
+  y[i] = x[i]*2;
+
+console.log(y);
+
+// => [2,4,6,8,10]
+```
+
+**Functional way with ES6 arrow functions**
+
+```javascript
+let x = [1,2,3,4,5];
+let y = x.map ( element => element*2 );
+
+console.log(y);
+
+// => [2,4,6,8,10]
+
+```
+
+The map function loop through all the elements of an array and applies a function to each one. You just saved at least 2 lines of code, a for loop and a counter. Note that map improves readability (in my opinion).a
+
+>Your second task is to implement the exact same algorithm, but doubling only the even numbers.
+
+**Old Way**
+
+```javascript
+let x = [1,2,3,4,5];
+let y = [];
+
+for(let i = 0; i < x.length; i++)
+  if(x[i] % 2 == 0)
+    y.push(x[i]*2);
+  else
+    continue; 
+
+console.log(y);
+
+// => [4,8]
+```
+
+**Functional Way**
+
+```javascript
+let x = [1,2,3,4,5];
+let y = x.filter( element => element % 2 == 0).map(element => element*2);
+
+console.log(y);
+
+// => [4,8]
+```
+
+The filter function loops through all the elements of an array and returns an array containing only the element matching the condition passed as parameter.
+
+
 
 
 
